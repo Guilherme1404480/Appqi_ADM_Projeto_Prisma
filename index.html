@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Prisma Fin · Gestão Financeira</title>
+  <meta name="description" content="Gestão financeira da Prisma BPO: contas, fluxo de caixa, orçamento por setor e metas.">
+  <meta name="theme-color" content="#f5f4f8">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Prisma Fin">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img class="brand-mark" src="icons/icon.svg" alt="">
+        <div>
+          <div class="brand-name">Prisma BPO</div>
+          <div class="brand-sub">Gestão Financeira</div>
+        </div>
+      </div>
+      <nav class="side-nav" id="side-nav" aria-label="Menu principal"></nav>
+      <p class="side-foot">Empresa fictícia criada para atividade acadêmica. Dados simulados.</p>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-mark" src="icons/icon.svg" alt="">
+          <div>
+            <div class="brand-name">Prisma BPO</div>
+            <div class="brand-sub">Gestão Financeira</div>
+          </div>
+        </div>
+        <span class="spacer"></span>
+        <span class="month-pill" id="month-pill"></span>
+        <button class="icon-btn install-btn" id="install-btn" type="button" aria-label="Instalar app" hidden></button>
+        <button class="icon-btn" id="menu-btn" type="button" aria-label="Mais opções"></button>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+
+    <nav class="tabbar" id="tabbar" aria-label="Menu principal"></nav>
+  </div>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <form class="modal-sheet" id="modal-form" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button type="button" class="icon-btn" data-close aria-label="Fechar" id="modal-x"></button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+      <footer class="modal-foot">
+        <button type="button" class="btn danger-ghost" id="modal-delete" hidden>Excluir</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn ghost" data-close id="modal-cancel">Cancelar</button>
+        <button type="submit" class="btn primary" id="modal-submit">Salvar</button>
+      </footer>
+    </form>
+  </div>
+
+  <div class="tooltip" id="tooltip" role="status" hidden></div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
